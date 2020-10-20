@@ -11,7 +11,7 @@ class App extends React.Component{
   }
 
   componentDidMount = () =>{
-    fetch('http://localhost:3000')
+    fetch(window.runtime.SERVICE_URL)
       .then(response => response.json())
       .then(data => this.setState({ data:data.msg }));
   }
@@ -31,7 +31,7 @@ class App extends React.Component{
           >
             Learn React
           </a>
-    <div>{window.runtime.url}</div>
+    <div>{window.runtime.SERVICE_URL}</div>
     <div>got infor from node:{this.state.data} </div>
         </header>
       </div>
@@ -40,3 +40,4 @@ class App extends React.Component{
 }
 
 export default App;
+
