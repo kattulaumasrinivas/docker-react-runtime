@@ -18,3 +18,4 @@ EOM
     
 # copy file to serve folder
 cp -f $file /usr/share/nginx/html/
+nginx -g 'daemon off;'

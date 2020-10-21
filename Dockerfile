@@ -25,5 +25,5 @@ COPY nginx/nginx.conf /etc/nginx/conf.d
 
 WORKDIR /home
 EXPOSE 80
-CMD ["/bin/bash", "-c", "runtime-config.sh, "nginx -g 'daemon off;'"]
+CMD ["sh", "runtime-config.sh"]
 # CMD ["sh","runtime-config.sh", "nginx -g 'daemon off;"]
