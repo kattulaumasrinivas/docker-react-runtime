@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# define variables here
-
-#1
-url=${SERVICE_URL:-"http://localhost:3000"}
-#2
-#3
-
 #Runtime configuration file name
 file=./runtime.js
 
@@ -17,7 +10,7 @@ echo "window['runtime'] = {" >> $file
 
 # continue writing envronment variables here
 # 1
-echo "\"SERVICE_URL\":\"$url\"" >> $file
+echo "\"SERVICE_URL\":\"${SERVICE_URL:-"http://localhost:3000"}\"" >> $file
 # 2
 # 3
 
