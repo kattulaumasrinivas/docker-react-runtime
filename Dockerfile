@@ -15,6 +15,7 @@ RUN npm run build
 # ------------------------------------------------------
 FROM nginx:1.17.0-alpine
 
+RUN apk add jq
 COPY --from=builder /app/build /usr/share/nginx/html
 COPY --from=builder /app/runtime-config.sh /home/
 COPY --from=builder /app/nginx/50x.html /usr/share/nginx/html
@@ -24,4 +25,5 @@ COPY nginx/nginx.conf /etc/nginx/conf.d
 
 WORKDIR /home
 EXPOSE 80
-CMD ["sh","runtime-config.sh"]
+CMD ["/bin/bash", "-c", "runtime-config.sh, "nginx -g 'daemon off;'"]
+# CMD ["sh","runtime-config.sh", "nginx -g 'daemon off;"]
