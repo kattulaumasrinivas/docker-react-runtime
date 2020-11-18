@@ -1,6 +1,6 @@
 This Repo is created as a reference to load configuration during runtime rather than build time. So as a Docker image can be created once and used for different stages with different configurations provided during containerization.
 
-Refer Docker file with multi-stage build..
+Refer Dockerfile written with multi-stage build steps.
 
 Reason:
 Most of the times React developers ignores the fact that Babel will write environment variables into the compiled JavaScript during build time. This cost a latency in multistage release due to the process of creating the build for different deployments needing different configuration properties for the same artifacts. Simply, a change in application configuration settings requires a rebuild and restart. In this article, we travel through the process of configuring the react application to load deployment properties in runtime.
